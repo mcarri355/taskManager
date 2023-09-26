@@ -8,13 +8,13 @@ const readPeople = (req, res) => {
 // Post function for creating people
 let length = people.length + 1;
 const createPeople = (req, res) => {
-  const { name, id } = req.body;
+  const { name, desc, id } = req.body;
   if (!name) {
     return res
       .status(400)
-      .json({ data: [], success: false, msg: 'Please enter a name' });
+      .json({ data: [], success: false, msg: 'Please enter a task' });
   }
-  let person = { id: length++, name: name };
+  let person = { id: length++, name: name, desc: desc };
   people.push(person);
   res.status(200).json({ success: true, data: [people] });
 };
