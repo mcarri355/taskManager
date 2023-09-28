@@ -87,18 +87,17 @@ let count = true;
 // Checkbox
 function checkbox(id) {
   var test = document.querySelectorAll('.e5');
-  console.log(this);
   for (let i = 0; i < test.length; i++) {
-    console.log(test);
     if (test[i].getAttribute('id') == id) {
       var ele = test[i];
+      var checkbox = ele.querySelector('.check'); // Get the checkbox element inside the h5
+      if (checkbox.checked) {
+        ele.style.textDecoration = 'line-through';
+        ele.style.backgroundColor = 'gray';
+      } else {
+        ele.style.textDecoration = 'none';
+        ele.style.backgroundColor = '';
+      }
     }
-  }
-  if (help) {
-    ele.style.textDecoration = 'line-through';
-    ele.style.backgroundColor = 'gray';
-  } else {
-    ele.style.textDecoration = 'none';
-    ele.style.backgroundColor = '';
   }
 }
